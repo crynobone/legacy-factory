@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace App\Testing\Factories;
 
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;

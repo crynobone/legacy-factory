@@ -21,7 +21,7 @@ class SimpleTest extends TestCase
         $user = factory(User::class)->create();
         $this->assertSame(1, User::get()->count());
 
-        $tag = factory(Tag::class)->create();
+        $tag = Tag::factory()->create();
         $this->assertSame(1, Tag::get()->count());
     }
 
@@ -31,7 +31,7 @@ class SimpleTest extends TestCase
         $this->assertSame(1, User::get()->count());
         $this->assertSame('Will G', $user->name);
 
-        $tag = factory(Tag::class)->create(['name' => 'Tag You Are It!']);
+        $tag = Tag::factory()->create(['name' => 'Tag You Are It!']);
         $this->assertSame(1, Tag::get()->count());
         $this->assertSame('Tag You Are It!', $tag->name);
     }
@@ -41,7 +41,7 @@ class SimpleTest extends TestCase
         $users = factory(User::class)->times(3)->create();
         $this->assertSame(3, User::get()->count());
 
-        $tags = factory(Tag::class)->times(3)->create();
+        $tags = Tag::factory()->times(3)->create();
         $this->assertSame(3, Tag::get()->count());
     }
 }
